@@ -10,22 +10,29 @@ import {
     PopoverArrow,
     PopoverCloseButton,
     Button,Portal
-  } from '@chakra-ui/react'
+  } from '@chakra-ui/react';
+  import {useNavigate} from "react-router-dom";
 const Navbar = () => {
 
     const [state, setState] = useState(false);
+    const navigate = useNavigate();
+ 
+   const toMentorsPage = () => {
+    return navigate("/mentor")
+   }
 
-
-
+   const homePage = () => {
+    return navigate("/")
+   }
   return (
     <NAVBAR>
       <div className='logo-container'>
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXK3cE8I364R3exmX4LRXRmMQPTeO95D2kBg&usqp=CAU" alt="MR" />
-         <h1>MR</h1>
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXK3cE8I364R3exmX4LRXRmMQPTeO95D2kBg&usqp=CAU" alt="MR" onClick={homePage} />
+         <h1 onClick={homePage}>MR</h1>
       </div>
       <div className='menu-container'>
         <button>Learn</button>
-        <button>Mentors</button>
+        <button onClick={toMentorsPage}>Mentors</button>
         <button>Compete</button>
         <button>Jobs</button>
       </div>

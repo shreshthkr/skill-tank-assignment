@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 import {IoArrowRedoSharp} from "react-icons/io5";
+import {BiSearch} from "react-icons/bi";
+import {MdKeyboardArrowDown,MdOutlineDatasetLinked} from "react-icons/md";
+import {PiStudentFill} from "react-icons/pi";
+import {TbFriends} from "react-icons/tb";
 const HomePage = () => {
   return (
     <HOME>
@@ -48,11 +52,84 @@ const HomePage = () => {
                             <h1>Services</h1>
                         </div>
                       </div>
-                      <div className='form-area'></div>
+                      <div className='form-area'>
+                        <div className='subject-1'>
+                        <label>Subject</label>
+                        <input type="text" placeholder='What do you want to study' />
+                        </div>
+                       <div className='search'>
+                        <label>Where</label>
+                        <div className='search-input'>
+                            <input type="text" placeholder='Your ideal country / region or institution' />
+                            <button><BiSearch />Search</button>
+                        </div>
+                       </div>
+                      </div>
                 </div>
             </div>
         </div>
-        <div className='left-side'></div>
+        <div className='left-side'>
+            <div>
+                <div className='poster-box'>
+                    <div className='quote-box'>
+                        <div className='quote'>
+                        <p>Empowering Education Through Innovation</p>
+                        </div>
+                        <div className='student-data'>
+                           <div><MdOutlineDatasetLinked color='#ffff' fontSize={"18px"} /></div>
+                           <div>
+                            <p>Total Students</p>
+                            <p>159.89</p>
+                           </div>
+                        <div><MdKeyboardArrowDown fontSize={"18px"} /></div>
+                        </div>
+                    </div>
+                    <div className='poster-box-1'>
+                        <img src="https://img.freepik.com/free-vector/girl-using-laptop-cartoon_1308-121412.jpg?w=740&t=st=1695731617~exp=1695732217~hmac=d2831f3fc930bea3b4eecc5d76e380c5b0f5419a7216893cb78ab2cf76a26e7f" alt="poster" />
+                    </div>
+                </div>
+                <div className='data-box'>
+                    <div className='data-1-box'>
+                        <div className='data-1-box-heading'>
+                            <h1>World Top 10 university</h1>
+                        </div>
+                        <div className='data-representation'>
+                            <div>
+                               <img src="https://i.ibb.co/NTBzK1K/Capture1.png" alt="data" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='data-2-box'>
+                        <div className='data-2-heading'>
+                            <h2>Earning Report</h2>
+                        </div>
+                        <div className='data-2-data'>
+                            <div className='data-2-data-1'>
+                                <div><MdOutlineDatasetLinked  /></div>
+                                <div>
+                                    <p>Total Students</p>
+                                    <p>78k</p>
+                                </div>
+                            </div>
+                            <div className='data-2-data-2'>
+                                <div><PiStudentFill /></div>
+                                <div>
+                                    <p> BD Topper Students</p>
+                                    <p>8k</p>
+                                </div>
+                            </div>
+                            <div className='data-2-data-3'>
+                                <div><TbFriends /></div>
+                                <div>
+                                    <p>Contributor Bobus</p>
+                                    <p>706</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
     </HOME>
   )
@@ -70,7 +147,7 @@ const HOME = styled.div`
     
     >div{
         width: 90%;
-        height: 800px;
+        height: 700px;
         display: flex;
         align-items:center;
         justify-content: space-around;
@@ -246,24 +323,347 @@ const HOME = styled.div`
 .form-heading{
    width :100% ;
    height: 60px;
-   border: 1px solid red;
    display: flex;
    align-items: center;
    justify-content: flex-start;
+   gap: 20px;
 }
-.form-heading div{
+
+.form-heading>div:first-child{
+    width: 105px;
+    height: 40px;
+    display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   border-bottom: 3px solid blue;
+   margin-left: 10px;
+}
+.form-heading>div:last-child{
+    width: 105px;
+    height: 35px;
     display: flex;
    align-items: center;
    justify-content: flex-start;
 }
+.form-heading>div:first-child>img{
+    width: 40px;
+    height: 35px;
+}
+.form-heading>div:last-child>img{
+    width: 35px;
+    height: 35px;
+}
+.form-heading div h1{
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
 .form-area{
-    width :100% ;
-   height: 70%;
-   border: 1px solid red;
+    width :95% ;
+   height: 75%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+}
+.form-area div{
+    width: 100%;
+    height: auto;
+}
+.subject-1{
+    width:100%;
+}
+.subject-1 label{
+    position: absolute;
+   left:12.8%;
+   top:77.5%;
+   font-size: 15px;
+    font-size: 15px;
+    transform: translateY(5px);
+}
+.subject-1 input{
+    width: 100%;
+    height: 60px;
+    border: 1px solid gray;
+    line-height: 1;
+    margin: auto;
+    border-radius: 5px;
+}
+.subject-1 input::placeholder{
+    text-align: left;
+    font-size: 12px;
+    padding: 10px;
+    transform: translateY(12px);
+}
+.search{
+    width: 100%;
+
+}
+.search label{
+    position: absolute;
+   left:12.8%;
+   top:86.5%;
+   font-size: 15px;
+    font-size: 15px;
+    transform: translateY(13px);
+}
+.search-input{
+    width: 100%;
+    height:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-input input{
+    width: 100%;
+    height: 60px;
+    border: 1px solid gray;
+    line-height: 1;
+    border-radius: 5px;
+}
+.search-input input::placeholder{
+    text-align: left;
+    font-size: 12px;
+    padding: 10px;
+    transform: translateY(10px);
+}
+.search-input button{
+   width:150px ;
+   height: 52px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size:18px;
+   background-color: rgb(175,137,148);
+   border: none;
+   border-radius: 5px;
+   color: #ffff;
+   position: absolute;
+   right: 50%;
+   font-weight: 600;
+   gap: 10px;
 }
   .left-side{
     width: 40%;
-     border: 1px solid teal;
      height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+  }
+  .left-side>div{
+    width: 98%;
+    height:97%;
+    display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     border-radius:8px;
+  }
+  .poster-box{
+     width:95%;
+     height: 40%;
+     background-color: rgb(115,86,136);
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 15px;
+  }
+  .quote-box{
+      width: 40%;
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  .quote{
+     width: 100%;
+     height:70%;
+  }
+  .quote>p{
+    height: auto;
+    color: #ffff;
+    font-size:28px;
+    font-weight: 700;
+  }
+  .student-data{
+    width: 100%;
+    height: 70px;
+     border: 1px solid white;
+     background-color: #ffff;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+  }
+  .student-data>div:first-child{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 6px;
+    background-color:rgb(255,116,38) ;
+  }
+  .student-data>div:nth-child(2)>p:first-child{
+    font-size: 14px;
+  }
+  .student-data>div:nth-child(2)>p:last-child{
+         font-size: 22px;
+         font-weight: 600;
+         color: black;
+  }
+  .student-data>div:last-child{
+      background-color:rgb(246,246,250) ;
+      border-radius: 50%;
+  }
+  .poster-box-1{
+    width: 40%;
+    height: 60%;
+    border: 1px solid white;
+    background-color: #ffff;
+    border-radius: 100%;
+  }
+  .poster-box-1>img{
+    background-color:rgb(115,86,136);
+    mix-blend-mode:multiply;
+  }
+  .data-box{
+    width:95%;
+     height: 36%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+  }
+  .data-1-box{
+    width: 40%;
+    height:90%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .data-1-box-heading{
+    width:95%;
+    height:10%;
+    
+  }
+  .data-1-box-heading>h1{
+    font-size:16px;
+    font-weight:600;
+    color:black;
+    text-align:center;
+  }
+  .data-representation{
+    width:95%;
+    height:80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .data-representation>div{
+    width: 90%;
+    height: 80%;
+    
+  }
+  .data-representation>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .data-2-box{
+  width: 40%;
+  height:90%;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+  }
+  .data-2-data{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;  
+  }
+  .data-2-data>div{
+    height: 33%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    
+  }
+  .data-2-heading>h2{
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .data-2-data-1>div:first-child{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 6px;
+    background-color:rgb(207,230,251);
+   
+  }
+  .data-2-data-1>div:last-child{
+   
+    width: 90%;
+    margin-left:5px;
+  }
+  .data-2-data-1>div:last-child>p:first-child{
+    font-size: 11px;
+    text-align: left;
+    
+  }
+  .data-2-data-1>div:last-child>p:last-child{
+      font-size: 20px;
+      font-weight: 600;
+  }
+  .data-2-data-2>div:last-child{
+   
+    width: 90%;
+    margin-left:5px;
+  }
+  .data-2-data-2>div:first-child{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 6px;
+    background-color:rgb(207,230,251);
+  }
+  .data-2-data-2>div:last-child>p:first-child{
+    font-size: 11px;
+  }
+  .data-2-data-2>div:last-child>p:last-child{
+      font-size: 20px;
+      font-weight: 600;
+  }
+  .data-2-data-3>div:last-child{
+   
+    width: 90%;
+    margin-left:5px;
+  }
+  .data-2-data-3>div:first-child{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 6px;
+    background-color:rgb(207,230,251);
+  }
+  .data-2-data-3>div:last-child>p:first-child{
+    font-size: 11px;
+  }
+  .data-2-data-3>div:last-child>p:last-child{
+      font-size: 20px;
+      font-weight: 600;
   }
 `
