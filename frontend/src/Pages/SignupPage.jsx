@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
+import styled from "styled-components";
 
 const SignupPage = () => {
   return (
-    <div>
-      
-    </div>
+    <SIGNUP>
+     
+    </SIGNUP>
   )
 }
 
 export default SignupPage;
+
+
+const SIGNUP = styled.div`
+  
+`
