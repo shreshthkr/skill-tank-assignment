@@ -35,6 +35,15 @@ appointmentRouter.get("/appointment", async (req, res) => {
     res.status(400).send({ msg: error.message });
   }
 });
+appointmentRouter.delete("/appointment/:id", async (req, res) => {
+  const appointmentId = req.params.id;
+  try {
+    const deletedAppointment = await appointmentModel.findByIdAndDelete(appointmentId);
+    res.status(200).send({ msg: "Appointment deleted successfully", deletedAppointment });
+  } catch (error) {
+    res.status(500).send({ msg: "Error deleting appointment", error: error.message });
+  }
+});
 
 module.exports = {
   appointmentRouter,

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { CgProfile } from "react-icons/cg";
+import {GiHamburgerMenu} from "react-icons/gi";
 import {
   Popover,
   PopoverTrigger,
@@ -18,11 +19,11 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  useToast,
+  useToast,Text
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose} = useDisclosure();
   const [login, setLogin] = useState(false);
   const [activeLogin, setActiveLogin] = useState("login");
   const [firstName, setFirstName] = useState("");
@@ -34,6 +35,7 @@ const Navbar = () => {
   const [userType, setUserType] = useState("");
   const navigate = useNavigate();
   const toast = useToast();
+  const [showMenu, setShowMenu] = useState(false)
   const handleLoginClick = () => {
     setActiveLogin("login");
     setLogin(false);
@@ -43,14 +45,15 @@ const Navbar = () => {
     setLogin(true);
   };
   const toMentorsPage = () => {
-    return navigate("/mentor");
+    navigate("/mentor");
+  setShowMenu(!showMenu);
   };
 
   const homePage = () => {
     return navigate("/");
   };
   const token = localStorage.getItem("token");
-
+  console.log(token);
   const handleSignUp = (e) => {
     e.preventDefault();
     const payload = {
@@ -168,10 +171,17 @@ const Navbar = () => {
             <Portal>
               <PopoverContent>
                 <PopoverArrow />
-                <PopoverHeader>Do you really want to logout?</PopoverHeader>
                 <PopoverCloseButton />
-                <PopoverBody>
-                  <Button onClose colorScheme="blue" onClick={handleLogout}>
+                <PopoverBody 
+                  height={"100px"}
+                display={"flex"}
+                   flexDirection={"column"}
+                   alignItems={"center"}
+                   justifyContent={"center"}
+                   gap={"30px"}
+                >
+                   <Text h={"20px"} fontWeight={"600"} cursor={"pointer"} onClose={onClose} onClick={()=>{return navigate("/appointment")}} >My Appointments</Text>
+                  <Button onClose={onClose} colorScheme="blue" onClick={handleLogout}>
                     Logout
                   </Button>
                 </PopoverBody>
@@ -363,6 +373,7 @@ const Navbar = () => {
                           fontWeight: "600",
                         }}
                         onClick={handleLogin}
+                        onClose={onClose}
                       >
                         Login
                       </button>
@@ -694,6 +705,13 @@ const Navbar = () => {
           </ModalContent>
         </Modal>
       </div>
+      <div className="hamberger"><GiHamburgerMenu onClick={()=>{setShowMenu(!showMenu)}} /></div>
+      {showMenu && <div className="menu-button">
+      <button onClick={()=>{setShowMenu(!showMenu)}}>Learn</button>
+        <button onClick={toMentorsPage}>Mentors</button>
+        <button onClick={()=>{setShowMenu(!showMenu)}}>Compete</button>
+        <button onClick={()=>{setShowMenu(!showMenu)}}>Jobs</button>
+      </div>}
     </NAVBAR>
   );
 };
@@ -764,4 +782,46 @@ const NAVBAR = styled.div`
     font-weight: 600;
     font-size: 16px;
   }
+  .hamberger{
+    display: none;
+  }
+  .menu-button{
+    display: none;
+}
+
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #ffff;
+      .menu-container{
+        display: none;
+      } 
+      .hamberger{
+      display: block;
+  }
+  .menu-button{
+     display: block;
+     position: absolute;
+     top: 10%;     
+     width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:rgb(115,86,136) ;
+    z-index: 1;
+  }
+  .menu-button button{
+    color: #ffff;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  }
+
 `;

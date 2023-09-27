@@ -688,4 +688,100 @@ const HOME = styled.div`
     font-size: 20px;
     font-weight: 600;
   }
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    > div {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .heading-1 > h1:first-child {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Verdana, sans-serif;
+    color: black;
+  }
+  .heading-2 > div:last-child > h1 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Verdana, sans-serif;
+    color: black;
+  }
+  .heading-3 > h1 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Verdana, sans-serif;
+    color: black;
+  }
+  .quote > p {
+    height: auto;
+    color: #ffff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+};
+
+@media screen and (max-width: 768px){
+  > div {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .right-side {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 280px;
+  }
+  .heading-1 > h1:first-child {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Verdana, sans-serif;
+    color: black;
+  }
+  .heading-2 > div:last-child > h1 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Verdana, sans-serif;
+    color: black;
+  }
+  .heading-3 > h1 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Verdana, sans-serif;
+    color: black;
+  }
+  .quote > p {
+    height: auto;
+    color: #ffff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .form-container{
+    display: none;
+  }
+  .left-side {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .poster-box-1 > img {
+    width: 95%;
+    height: 100%;
+    background-color: rgb(115, 86, 136);
+    mix-blend-mode: multiply;
+  }
+  .data-2-box {
+    height: 98%;
+  }
+}
 `;
